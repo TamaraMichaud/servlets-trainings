@@ -14,3 +14,8 @@
 
 ## Users -> hashmap String, User (string = id, user = firstname, lastname
 ## User
+
+
+
+
+#.... -> debugging:  sout goes to Tomcat-installation/logs/catalina.out
