@@ -7,23 +7,23 @@
 
     <display-name>Tamaras Servlet Training Project</display-name>
 
-    <filter>
-        <filter-name>LogFilter</filter-name>
-        <filter-class>LogFilter</filter-class>
+<!--    <filter>-->
+<!--        <filter-name>LogFilter</filter-name>-->
+<!--        <filter-class>LogFilter</filter-class>-->
 
-        <init-param>
-            <param-name>test-param</param-name>
-            <param-value>Initialization Parameter</param-value>
-        </init-param>
-    </filter>
+<!--        <init-param>-->
+<!--            <param-name>test-param</param-name>-->
+<!--            <param-value>Initialization Parameter</param-value>-->
+<!--        </init-param>-->
+<!--    </filter>-->
 
-<!--    filter-mapping is the block where the order matters-->
-    <filter-mapping>
-        <filter-name>LogFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-        <servlet-name>AllFormValues</servlet-name>
-<!--        <dispatcher>REQUEST</dispatcher>-->
-    </filter-mapping>
+<!--&lt;!&ndash;    filter-mapping is the block where the order matters&ndash;&gt;-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>LogFilter</filter-name>-->
+<!--        <url-pattern>/*</url-pattern>-->
+<!--        <servlet-name>AllFormValues</servlet-name>-->
+<!--&lt;!&ndash;        <dispatcher>REQUEST</dispatcher>&ndash;&gt;-->
+<!--    </filter-mapping>-->
 
 
 <!--    <session-config>-->
@@ -32,39 +32,43 @@
 <!--    ^^ is this the right place for this block...?-->
 
     <servlet>
-        <servlet-name>simpleServlet</servlet-name>
-        <servlet-class>initialTestingJunkCode.HelloWorld</servlet-class>
-<!--        <load-on-startup>1</load-on-startup>-->
+        <servlet-name>Startup</servlet-name>
+        <servlet-class>servlet.StartupServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
 <!--        ^^ you can have more numbers; Tomcat will go through all the 1s first, then all the 2s etc-->
 <!--        ^^ no mapping required when "load-on-startup" -> cannot be loaded through the ui-->
     </servlet>
     <servlet>
-        <servlet-name>servletWithForm</servlet-name>
-        <servlet-class>initialTestingJunkCode.HelloForm</servlet-class>
+        <servlet-name>DoNothingServlet</servlet-name>
+        <servlet-class>servlet.Xyzzy</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>checkboxesServlet</servlet-name>
-        <servlet-class>initialTestingJunkCode.Checkboxes</servlet-class>
+        <servlet-name>UsersServlet</servlet-name>
+        <servlet-class>servlet.UsersServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>allFormData</servlet-name>
-        <servlet-class>AllFormValues</servlet-class>
+        <servlet-name>ShowNewUserServlet</servlet-name>
+        <servlet-class>servlet.ShowNewUserServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ShowUpdateUserServlet</servlet-name>
+        <servlet-class>servlet.ShowUpdateUserServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>simpleServlet</servlet-name>
-        <url-pattern>/initialTestingJunkCode.HelloWorld</url-pattern>
+        <servlet-name>DoNothingServlet</servlet-name>
+        <url-pattern>/xyzzy</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>servletWithForm</servlet-name>
-        <url-pattern>/initialTestingJunkCode.HelloForm</url-pattern>
+        <servlet-name>UsersServlet</servlet-name>
+        <url-pattern>/users</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>checkboxesServlet</servlet-name>
-        <url-pattern>/initialTestingJunkCode.Checkboxes</url-pattern>
+        <servlet-name>ShowNewUserServlet</servlet-name>
+        <url-pattern>/newuser</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>allFormData</servlet-name>
-        <url-pattern>/AllFormValues</url-pattern>
+        <servlet-name>ShowUpdateUserServlet</servlet-name>
+        <url-pattern>/updateuser</url-pattern>
     </servlet-mapping>
 </web-app>

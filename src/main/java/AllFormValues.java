@@ -1,5 +1,8 @@
 // Import required java libraries
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -8,10 +11,11 @@ import java.util.*;
 // Extend HttpServlet class
 public class AllFormValues extends HttpServlet {
 
+    private static Logger LOGGER = LoggerFactory.getLogger(AllFormValues.class);
+
     // Method to handle GET method request.
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
 
         // Set error code and reason.
 //        response.sendError(407, "Need authentication!!!" );
@@ -21,7 +25,7 @@ public class AllFormValues extends HttpServlet {
 //        response.setIntHeader("Refresh", 5);   //TODO: how to persist the form infos etc?? this resets everything every 5 seconds!
 //        ^^ this is for the clock to update
 
-
+        LOGGER.info("Doing GET");
         // TODO: find out why this is only ever creating a new session every time...
         // Create a session object if it is already not  created.
         HttpSession session = request.getSession(true);
@@ -84,10 +88,10 @@ public class AllFormValues extends HttpServlet {
 
         out.println(
                 printRow("id", session.getId()) +
-                printRow("Creation Time", createTime.toString()) +
-                printRow("Time of Last Access", lastAccessTime.toString()) +
-                printRow("User ID", userID) +
-                printRow("Visit Count", String.valueOf(visitCount))
+                        printRow("Creation Time", createTime.toString()) +
+                        printRow("Time of Last Access", lastAccessTime.toString()) +
+                        printRow("User ID", userID) +
+                        printRow("Visit Count", String.valueOf(visitCount))
         );
 
         out.println("</table>");
@@ -105,12 +109,14 @@ public class AllFormValues extends HttpServlet {
         printAllValues("header", headerNames, out, request);
 
         out.println("</body></html>");
+
+        LOGGER.info("Page Loaded");
     }
 
     // Method to handle POST method request.
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+        LOGGER.info("Doing POST");
         doGet(request, response);
     }
 
