@@ -5,7 +5,7 @@ import java.util.List;
 
 public class HtmlTable implements HtmlThing {
 
-	private List<HtmlTableRow> rows = new ArrayList<HtmlTableRow>();
+	private List<HtmlTableRow> rows = new ArrayList<>();
 
 	public void addRow(HtmlTableRow row) {
 		rows.add(row);
@@ -14,7 +14,7 @@ public class HtmlTable implements HtmlThing {
 	@Override
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
-		sb.append("<table border=1 >\n");
+		sb.append("<table class=\"table table-striped table-hover\" >\n");
 		
 		for (HtmlTableRow row : rows) {
 			sb.append(row.toString());

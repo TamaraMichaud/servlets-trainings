@@ -1,13 +1,14 @@
 package html;
 
-public class HtmlElement implements HtmlThing {
+public class
+HtmlElement implements HtmlThing {
 
 	private String elementText;
 
 	public HtmlElement(String elementText) {
 		super();
 		this.elementText = elementText;
-	};
+	}
 	
 	@Override
 	public String toString() {

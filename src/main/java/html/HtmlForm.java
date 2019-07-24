@@ -5,43 +5,55 @@ import java.util.List;
 
 public class HtmlForm implements HtmlThing {
 
-	private String action;
-	private String method;
+    private String action;
+    private String method;
 
-	private List<String> inputs = new ArrayList<String>();
+    private List<String> inputs = new ArrayList<>();
 
-	public HtmlForm(String action, String method) {
-		super();
-		this.action = action;
-		this.method = method;
-	}
+    public HtmlForm(String action, String method) {
+        super();
+        this.action = action;
+        this.method = method;
+    }
 
-	public void addInput(String label, String name) {
-		inputs.add(label + ": <input type = \"text\" name = \"" + name + "\"><br/>");
-	}
+    public void addInput(String label, String name) {
 
-	public void addInput(String label, String name, String value) {
-		inputs.add(label + ": <input type = \"text\" name = \"" + name + "\" value = \"" + value + "\"><br/>");
-	}
+        String labelTag = "<label for=\"" + name + "\">" + label + "</label>";
+        String inputTag = "<input type=\"text\" class=\"form-control input-md\" id=\"" + name
+                + "\" name=\"" + name + "\" required>";
 
-	public void addHiddenInput(String name, String value) {
-		inputs.add("<input type = \"hidden\" name = \"" + name + "\" value = \"" + value + "\"><br/>");
-	}
+        inputs.add(labelTag + "\n" + inputTag + "<br>\n");
+    }
 
-	@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("<form action = \"" + action + "\" method = \"" + method + "\">\n");
+    public void addInput(String label, String name, String value) {
 
-		for (String string : inputs) {
-			sb.append(string+"\n");
-		}
+        String labelTag = "<label for=\"" + name + "\">" + label + "</label>";
+        String inputTag = "<input type=\"text\" class=\"form-control input-md\" id=\"" + name
+                + "\" name=\"" + name + "\" value=\"" + value + "\" required>";
 
-		sb.append("<input type = \"submit\" value = \"Submit\" />\n");
-		
-		sb.append("</form>\n");
+        inputs.add(labelTag + "\n" + inputTag + "<br>\n");
+    }
 
-		return sb.toString();
-	}
+    public void addHiddenInput(String name, String value) {
+        inputs.add("<input type = \"hidden\" name = \"" + name + "\" value = \"" + value + "\"><br/>");
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.format("<form action = \"%s\" method = \"%s\">\n", action, method));
+        sb.append("<div class=\"form-group\">");
+
+        for (String string : inputs) {
+            sb.append(string);
+            sb.append("\n");
+        }
+
+        sb.append("<input class=\"btn btn-primary\" type = \"submit\" value = \"Submit\" />\n");
+        sb.append("</div>\n");
+        sb.append("</form>\n");
+
+        return sb.toString();
+    }
 
 }
