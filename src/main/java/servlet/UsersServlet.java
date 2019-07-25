@@ -15,18 +15,15 @@ import java.util.List;
 
 public class UsersServlet extends HttpServlet {
 
-	private String message;
-
 	public void init() throws ServletException {
 		// Do required initialization
-		message = "Nothing happens...";
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("GET /users");
 		String action = request.getParameter("action");
 
-		if (action != null && "delete".equals(action)) {
+		if ("delete".equals(action)) {
 			doDelete(request, response);
 		} else {
 	
@@ -111,7 +108,7 @@ public class UsersServlet extends HttpServlet {
 			HtmlTableCell lastName = new HtmlTableCell(user.getLastName());
 			HtmlTableCell deleteLink = new HtmlTableCell("<a href=\"/users?action=delete&id="+user.getId()+"\">delete<a/>");
 
-			List<HtmlTableCell> cells = new ArrayList<HtmlTableCell>();
+			List<HtmlTableCell> cells = new ArrayList<>();
 			cells.add(id);
 			cells.add(firstName);
 			cells.add(lastName);
@@ -123,7 +120,7 @@ public class UsersServlet extends HttpServlet {
 
 		htmlPage.addTable(htmlTable);
 
-		HtmlElement htmlElement = new HtmlElement("<a href=\"newuser\"> Add New User </a>");
+		HtmlElement htmlElement = new HtmlElement("<a class=\"btn btn-primary\" href=\"newuser\"> Add New User </a>");
 		htmlPage.addElement(htmlElement);
 
 		return htmlPage.toString();

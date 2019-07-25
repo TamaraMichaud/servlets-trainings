@@ -15,7 +15,8 @@ public class HtmlTable implements HtmlThing {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append("<table class=\"table table-striped table-hover\" >\n");
-		
+		sb.append(tableHeader());
+
 		for (HtmlTableRow row : rows) {
 			sb.append(row.toString());
 		}
@@ -24,4 +25,8 @@ public class HtmlTable implements HtmlThing {
 		return sb.toString();
 	}
 
+	public String tableHeader(){
+
+		return "<th><td>ID</td><td>First Name</td><td>Last Name</td><td>Action</td></th>";
+	}
 }
