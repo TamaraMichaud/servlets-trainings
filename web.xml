@@ -71,4 +71,30 @@
         <servlet-name>ShowUpdateUserServlet</servlet-name>
         <url-pattern>/updateuser</url-pattern>
     </servlet-mapping>
+
+<!--    http://avajava.com/tutorials/lessons/how-do-i-use-basic-authentication-with-tomcat.html-->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Wildcard means whole app requires authentication</web-resource-name>
+            <url-pattern>/newuser</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>tomcat</role-name>
+        </auth-constraint>
+
+        <user-data-constraint>
+            <!-- transport-guarantee can be CONFIDENTIAL, INTEGRAL, or NONE -->
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+
+    <login-config>
+        <auth-method>BASIC</auth-method>
+    </login-config>
+
+
+
+
 </web-app>
