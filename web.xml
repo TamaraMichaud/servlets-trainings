@@ -100,6 +100,7 @@
 
     <login-config>
         <auth-method>BASIC</auth-method>
+<!--        TODO: this block ^^ can have FORM also... and include login page / error page options-->
     </login-config>
 
 
