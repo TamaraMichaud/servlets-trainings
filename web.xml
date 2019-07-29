@@ -54,6 +54,10 @@
         <servlet-name>ShowUpdateUserServlet</servlet-name>
         <servlet-class>servlet.ShowUpdateUserServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AllFormValues</servlet-name>
+        <servlet-class>.AllFormValues</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>DoNothingServlet</servlet-name>
@@ -70,5 +74,9 @@
     <servlet-mapping>
         <servlet-name>ShowUpdateUserServlet</servlet-name>
         <url-pattern>/updateuser</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AllFormValues</servlet-name>
+        <url-pattern>/pageinfo</url-pattern>
     </servlet-mapping>
 </web-app>

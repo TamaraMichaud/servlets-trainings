@@ -38,7 +38,7 @@ public class AllFormValues extends HttpServlet {
         // Get last access time of this web page.
         Date lastAccessTime = new Date(session.getLastAccessedTime());
 
-        String greeting = "Welcome Back to my website";
+        String greeting = "Welcome Back to my java servlets exercise";
         int visitCount = 0;
         String visitCountKey = "visitCount";
         String userIDKey = "userID";
@@ -46,7 +46,7 @@ public class AllFormValues extends HttpServlet {
 
         // Check if this is new comer on your web page.
         if (session.isNew()) {
-            greeting = "Welcome to my website";
+            greeting = "Welcome to my java servlets exercise";
             session.setAttribute(userIDKey, userID);
         } else {
             visitCount = (Integer) session.getAttribute(visitCountKey);
@@ -122,6 +122,8 @@ public class AllFormValues extends HttpServlet {
 
 
     private void printAllValues(String valueType, Enumeration paramNames, PrintWriter out, HttpServletRequest request) {
+
+        //TODO: incorporate the Html* classes for this...
 
         out.println("<table width = \"100%\" border = \"1\" align = \"center\">\n" +
                 "<tr bgcolor = \"#949494\">\n" +
