@@ -22,8 +22,7 @@ public class StartupServlet extends HttpServlet {
 		
 		users.put(fred.getId(), fred);
 		users.put(bill.getId(), bill);
-		
-		System.out.println("Argh!");
+
 		System.out.println("Added Users in-memory DB - there are " + users.size() + " users");
 	}
 

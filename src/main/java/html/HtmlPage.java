@@ -46,7 +46,7 @@ public class HtmlPage {
 
         sb.append(htmlHeaderString);
         sb.append("<body bgcolor = \"#f0f0f0\">\n");
-        sb.append("<div id=\"main-page\" class=\"container\">");
+        sb.append("<div id=\"main-page\" class=\"container-fluid col-md-8\">");
         sb.append(htmlTitleString);
 
         for (HtmlThing htmlThing : things) {

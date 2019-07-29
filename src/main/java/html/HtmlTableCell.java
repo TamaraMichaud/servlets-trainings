@@ -21,7 +21,7 @@ public class HtmlTableCell {
 		if (this.link == null) {
 			sb.append(cellText);
 		} else {
-			sb.append("<a class=\"btn button-info\" href=\"" + link + "\">" + cellText + "<a/>");
+			sb.append("<a class=\"btn btn-info\" href=\"" + link + "\">" + cellText + "</a>");
 		}
 
 		return sb.toString();

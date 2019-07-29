@@ -27,6 +27,6 @@ public class HtmlTable implements HtmlThing {
 
 	public String tableHeader(){
 
-		return "<th><td>ID</td><td>First Name</td><td>Last Name</td><td>Action</td></th>";
+		return "<tr><th>ID</th><th>First Name</th><th>Last Name</th><th>Action</th></tr>";
 	}
 }

@@ -23,10 +23,10 @@ public class HtmlTableRow {
 		sb.append("<tr>\n");
 
 		for (HtmlTableCell cell : cells) {
-			sb.append("<td>" + cell.toString() + "<td/>\n");
+			sb.append("<td>" + cell.toString() + "</td>\n");
 		}
 
-		sb.append("<tr/>\n");
+		sb.append("</tr>\n");
 		return sb.toString();
 	}
 
