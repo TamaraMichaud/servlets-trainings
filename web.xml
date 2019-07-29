@@ -90,6 +90,7 @@
         </web-resource-collection>
         <auth-constraint>
             <role-name>tomcat</role-name>
+<!--            ^^ see file ..../tomcat/conf/tomcat-users.xml-->
         </auth-constraint>
 
         <user-data-constraint>
