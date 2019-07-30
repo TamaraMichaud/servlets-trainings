@@ -25,7 +25,7 @@ public class ShowNewUserServlet extends HttpServlet {
 		response.setContentType("text/html");
 
 		HtmlPage htmlPage = new HtmlPage("New User");
-		HtmlForm htmlForm = new HtmlForm("/users", "POST");
+		HtmlForm htmlForm = new HtmlForm("users", "POST");
 		
 		htmlForm.addInput("First Name", "firstName");
 		htmlForm.addInput("Last Name", "lastName");

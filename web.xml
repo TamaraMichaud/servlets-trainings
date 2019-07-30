@@ -56,7 +56,7 @@
     </servlet>
     <servlet>
         <servlet-name>AllFormValues</servlet-name>
-        <servlet-class>.AllFormValues</servlet-class>
+        <servlet-class>AllFormValues</servlet-class>
     </servlet>
 
     <servlet-mapping>

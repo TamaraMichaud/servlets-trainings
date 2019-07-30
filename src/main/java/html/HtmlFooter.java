@@ -6,9 +6,9 @@ public class HtmlFooter {
 
     public HtmlFooter() {
 
-        footerString = "<footer class=\"footer\">" +
+        footerString = "<footer id=\"footer\" class=\"footer\">" +
                 "<div class=\"container\">" +
-                "<span class=\"text-muted\"><a href=\"/pageinfo\">Page Information</a></span>" +
+                "<span class=\"text-muted\"><a href=\"pageinfo\">Page Information</a></span>" +
                 "</div></footer>";
     }
 

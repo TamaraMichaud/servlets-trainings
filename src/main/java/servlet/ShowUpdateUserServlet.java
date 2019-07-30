@@ -28,7 +28,7 @@ public class ShowUpdateUserServlet extends HttpServlet {
 		User user = users.get(userId);
 
 		HtmlPage htmlPage = new HtmlPage("Update User");
-		HtmlForm htmlForm = new HtmlForm("/users", "POST");
+		HtmlForm htmlForm = new HtmlForm("users", "POST");
 
 		htmlForm.addHiddenInput("id", user.getId());
 		htmlForm.addInput("First Name", "firstName", user.getFirstName());

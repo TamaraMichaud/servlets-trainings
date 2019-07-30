@@ -68,7 +68,9 @@ public class AllFormValues extends HttpServlet {
         String docHeaderBodyOpen = "<html>\n" +
                 "<head><meta charset=\"utf-8\"><title>" + title + "</title></head>\n" +
                 "<body bgcolor = \"#f0f0f0\">\n" +
-                "<h1 align = \"center\">" + title + "</h1>\n";
+                "<h1 align = \"center\">" + greeting + "</h1>\n";
+
+        out.println("<a class=\"btn btn-dark\" href=\"users\">Back</a>");
 
         out.println(docType + docHeaderBodyOpen);
 

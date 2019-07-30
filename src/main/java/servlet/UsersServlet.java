@@ -104,9 +104,9 @@ public class UsersServlet extends HttpServlet {
 		for (User user : users.values()) {
 			HtmlTableRow row = new HtmlTableRow();
 			HtmlTableCell id = new HtmlTableCell(user.getId().substring(0,13));
-			HtmlTableCell firstName = new HtmlTableCell(user.getFirstName(), "/updateuser?id=" + user.getId());
+			HtmlTableCell firstName = new HtmlTableCell(user.getFirstName(), "updateuser?id=" + user.getId());
 			HtmlTableCell lastName = new HtmlTableCell(user.getLastName());
-			HtmlTableCell deleteLink = new HtmlTableCell("delete", "/users?action=delete&id=" + user.getId() );
+			HtmlTableCell deleteLink = new HtmlTableCell("delete", "users?action=delete&id=" + user.getId() );
 
 			List<HtmlTableCell> cells = new ArrayList<>();
 			cells.add(id);
