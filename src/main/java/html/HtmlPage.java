@@ -38,7 +38,7 @@ public class HtmlPage {
                        "href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' " +
                        "integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' " +
                        "crossorigin='anonymous'>\n" +
-                       "<link rel=\"stylesheet\" href=\"../styles.css\">\n" +
+                       "<link rel=\"stylesheet\" href=\"styles.css\">\n" +
                        "<link href=\"js/jquery-ui-1.12.1/jquery-ui.min.css\" rel=\"stylesheet\">" +
                      "<link href=\"bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\">" +
         "</head>\n";

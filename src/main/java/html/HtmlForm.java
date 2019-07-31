@@ -50,6 +50,7 @@ public class HtmlForm implements HtmlThing {
         }
 
         sb.append("<input class=\"btn btn-primary\" type = \"submit\" value = \"Submit\" />\n");
+        sb.append("<a class=\"btn btn-dark\" style=\"color:white\" href=\"users\" >Cancel</a>\n");
         sb.append("</div>\n");
         sb.append("</form>\n");
 
