@@ -1,5 +1,6 @@
 // Import required java libraries
 
+import data.DbMySql;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -92,6 +93,9 @@ public class AllFormValues extends HttpServlet {
 
         out.println("<a class=\"btn btn-dark\" href=\"users\">Back</a>");
 
+        DbMySql mySqlDb = new DbMySql();
+        String dbQueryResult = mySqlDb.countUsers();
+        out.print("<br><p>Db Result = " + dbQueryResult + "</p>\n");
 
         // show the current time
         out.print("<p>The Time Now Is: " + getCurrentTime()
