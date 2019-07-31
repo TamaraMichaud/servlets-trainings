@@ -7,6 +7,12 @@
 
     <display-name>Tamaras Servlet Training Project</display-name>
 
+<!--    WELCOME PAGES-->
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+<!--        <welcome-file>another-file-as-backup</welcome-file>-->
+    </welcome-file-list>
+
 <!--    <filter>-->
 <!--        <filter-name>LogFilter</filter-name>-->
 <!--        <filter-class>LogFilter</filter-class>-->

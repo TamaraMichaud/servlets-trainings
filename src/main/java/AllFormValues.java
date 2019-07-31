@@ -50,7 +50,12 @@ public class AllFormValues extends HttpServlet {
             greeting = "Welcome to my java servlets exercise";
             session.setAttribute(userIDKey, userID);
         } else {
-            visitCount = (Integer) session.getAttribute(visitCountKey);
+            try {
+                visitCount = (Integer) session.getAttribute(visitCountKey);
+            }
+            catch (Exception e) {
+                visitCount = 0;
+            }
             visitCount = visitCount + 1;
             userID = (String) session.getAttribute(userIDKey);
         }
