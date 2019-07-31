@@ -32,9 +32,10 @@
 <!--    </filter-mapping>-->
 
 
-<!--    <session-config>-->
-<!--        <session-timeout>15</session-timeout>-->
-<!--    </session-config>  -->
+    <session-config>
+        <session-timeout>15</session-timeout>
+<!--        ^^ minutes, doesn't appear to make any difference... -->
+    </session-config>
 <!--    ^^ is this the right place for this block...?-->
 
     <servlet>

@@ -23,16 +23,15 @@ public class AllFormValues extends HttpServlet {
 //        ^^ to send an error response to the cl
 //        ient
 
-        // Set refresh, autoload time as 5 seconds
-//        response.setIntHeader("Refresh", 5);   //TODO: how to persist the form infos etc?? this resets everything every 5 seconds!
-//        ^^ this is for the clock to update
+        // Set refresh for current time msg; in seconds
+        response.setIntHeader("Refresh", 5);
 
         LOGGER.info("Doing GET");
-        // TODO: find out why this is only ever creating a new session every time...
+
         // Create a session object if it is already not  created.
         HttpSession session = request.getSession(true);
-        session.setMaxInactiveInterval(2);  // in minutes, default in TomCat is 30 - getMaxIn.... however is returned in seconds...
-        // can also be set in the web.xml
+//        session.setMaxInactiveInterval(2);  // in minutes, default in TomCat is 30 - getMaxIn.... however is returned in seconds...
+        // can also be set in the web.xml  // && is, to 15 minutes...
 
         // Get session creation time.
         Date createTime = new Date(session.getCreationTime());
@@ -86,27 +85,27 @@ public class AllFormValues extends HttpServlet {
                 "<link href=\"bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\">" +
                 "</head>\n" +
                 "<body bgcolor = \"#f0f0f0\">\n" +
-                "<div class=\"container\">" +
+                "<div class=\"container mt-5\" >" +
                 "<h1 align = \"center\">" + greeting + "</h1>\n";
 
-        out.println(docType + docHeaderBodyOpen);
+        out.println(docType + docHeaderBodyOpen + "<br>");
 
+
+        // back button
         out.println("<a class=\"btn btn-dark\" href=\"users\">Back</a>");
 
+        // show session info
+        out.println("<h2>" + greeting + "</h2>"); // welcome (back)
+
+//db connection
         DbMySql mySqlDb = new DbMySql();
         String dbQueryResult = mySqlDb.countUsers();
-        out.print("<br><p>Db Result = " + dbQueryResult + "</p>\n");
-
+        out.print("<br><p align=\"center\">Db Result = " + dbQueryResult + "</p>\n");
+//out.print("<br><hr><br>");
         // show the current time
-        out.print("<p>The Time Now Is: " + getCurrentTime()
-                + "</p>");
-
-
-        // show session info
-        out.println("<h2>" + title + "</h2>"); // welcome (back)
-
-
-        out.println("<table border = \"1\" align = \"center\">\n" +
+        out.print("<p>The Time Now Is: " + getCurrentTime() + "</p><br>");
+out.print("</div><div class=\"row\"><div class=\"col col-lg-8 offset-2\">");
+        out.println("<table class=\"table table-striped table-hover table-dark\">\n" +
                 "<tr bgcolor = \"#949494\">\n" +
                 "  <th>Session info</th><th>value</th>" +
                 "</tr>\n");
@@ -120,7 +119,8 @@ public class AllFormValues extends HttpServlet {
         );
 
         out.println("</table>");
-
+        out.print("<hr></div></div>");
+        out.print("<div class=\"row\"><div class=\"col col-lg-8 offset-2\">");
         // get form POST params
         Enumeration parameterNames = request.getParameterNames();
 
@@ -129,15 +129,18 @@ public class AllFormValues extends HttpServlet {
 
         printAllValues("param", parameterNames, out, request);
 
-        out.println("<br><hr><h1>Reading All HHTP Headers</h1>");
+        out.println("<br><hr><h3>Reading All HHTP Headers</h3>");
 
         printAllValues("header", headerNames, out, request);
+        out.print("<br><hr><br>");
+        out.print("<hr></div></div>");
+        out.println("</div>");
 
         out.println("<script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>" +
         "<script src=\"bootstrap/js/bootstrap.bundle.min.js\"></script>" +
         "<script src=\"js/script.js\"></script>");
 
-        out.println("</div></body></html>");
+        out.println("</body></html>");
 
         LOGGER.info("Page Loaded");
     }
@@ -154,7 +157,7 @@ public class AllFormValues extends HttpServlet {
 
         //TODO: incorporate the Html* classes for this...
 
-        out.println("<table width = \"100%\" border = \"1\" align = \"center\">\n" +
+        out.println("<table class=\"table table-striped table-hover\">\n" +
                 "<tr bgcolor = \"#949494\">\n" +
                 "<th>Param Name</th>" +
                 "<th>Param Value(s)</th>\n" +
@@ -182,8 +185,8 @@ public class AllFormValues extends HttpServlet {
                     // Read multiple valued data
                     out.println("<ul>");
 
-                    for (int i = 0; i < paramValues.length; i++) {
-                        out.println("<li>" + paramValues[i] + "</li>");
+                    for (String paramValue : paramValues) {
+                        out.println("<li>" + paramValue + "</li>");
                     }
                     out.println("</ul>");
                 }
