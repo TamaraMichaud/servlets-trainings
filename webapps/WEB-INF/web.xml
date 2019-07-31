@@ -100,12 +100,35 @@
         </user-data-constraint>
     </security-constraint>
 
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>UpdateUser</web-resource-name>
+            <url-pattern>/updateuser</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>tomcat</role-name>
+            <!--            ^^ see file ..../tomcat/conf/tomcat-users.xml-->
+        </auth-constraint>
+
+        <user-data-constraint>
+            <!-- transport-guarantee can be CONFIDENTIAL, INTEGRAL, or NONE -->
+            <!--            we want CONFIDENTIAL but we have no SSLs...-->
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+
+
+
     <login-config>
-        <auth-method>BASIC</auth-method>
-<!--        TODO: this block ^^ can have FORM also... and include login page / error page options-->
+        <auth-method>FORM</auth-method>
+<!--        ^^ can also have BASIC... maybe others-->
+        <form-login-config>
+            <form-login-page>/jsp/login.jsp</form-login-page>
+            <form-error-page>/jsp/error.jsp</form-error-page>
+        </form-login-config>
     </login-config>
-
-
 
 
 

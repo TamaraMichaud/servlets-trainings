@@ -54,15 +54,15 @@
     </dependencies>
 
     <build>
-        <sourceDirectory>src/main/java</sourceDirectory>
+<!--        <sourceDirectory>src/main/java</sourceDirectory>-->
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
                 <version>2.4</version>
                 <configuration>
-<!--                    <warSourceDirectory>target</warSourceDirectory>-->
-                    <webXml>web.xml</webXml>
+                    <warSourceDirectory>webapps</warSourceDirectory>
+<!--                    <webXml>webapps/WEB-INF/web.xml</webXml>-->
 <!--                    ^^ path to your file, probbaly should be in a folder, but mine isnt-->
 <!--                    <source>6</source>-->
 <!--                    <target>1.8</target>-->
