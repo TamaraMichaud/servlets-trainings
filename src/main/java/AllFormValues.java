@@ -19,7 +19,8 @@ public class AllFormValues extends HttpServlet {
 
         // Set error code and reason.
 //        response.sendError(407, "Need authentication!!!" );
-//        ^^ to send an error response to the client
+//        ^^ to send an error response to the cl
+//        ient
 
         // Set refresh, autoload time as 5 seconds
 //        response.setIntHeader("Refresh", 5);   //TODO: how to persist the form infos etc?? this resets everything every 5 seconds!

@@ -63,14 +63,16 @@
                 <configuration>
 <!--                    <warSourceDirectory>target</warSourceDirectory>-->
                     <webXml>web.xml</webXml>
+<!--                    ^^ path to your file, probbaly should be in a folder, but mine isnt-->
 <!--                    <source>6</source>-->
 <!--                    <target>1.8</target>-->
-                    <!--&lt;!&ndash;    // ^^ 1.8 is for JAVA 8, so should be 1.11 for the v11 i'm using?&ndash;&gt;-->
+                    <!--&lt;!&ndash;    // ^^ 1.8 is for JAVA 8, so should be 1.11 for the v11 i'm using? NO should be 11 ... 10 & 11 are as is, prior is 1.x ... obvs... &ndash;&gt;-->
 <!--                    ^^ these bits have been set inthe properties tags atthe top of this doc instead-->
                 </configuration>
             </plugin>
         </plugins>
     </build>
+    ]
 
 
 </project>

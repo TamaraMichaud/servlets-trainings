@@ -21,6 +21,8 @@ public class UsersServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("GET /users");
+		String contextPath = request.getContextPath();
+//		^^ this is for your main directory; all my links here currently use relative referencing but this will get ugly if i had more packages
 		String action = request.getParameter("action");
 
 		if ("delete".equals(action)) {
