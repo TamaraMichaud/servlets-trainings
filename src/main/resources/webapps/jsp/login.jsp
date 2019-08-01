@@ -3,7 +3,7 @@
    <head>
       <!-- Required meta tags -->
       <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta language="java" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
       <link rel="stylesheet" href="style.css">
@@ -17,7 +17,11 @@
    </head>
    <body>
 
-    <div class="container-fluid" style="width:50%">
+      <%@ include file="../includes/Navbar.jsp" %>
+
+
+
+    <div class="container-fluid" style="width:50%;position:relative;top:100px">
     <form method="POST" action='<%= response.encodeURL("j_security_check") %>' class="form-signin text-center">
 
        <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
