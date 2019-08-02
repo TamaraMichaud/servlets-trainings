@@ -1,4 +1,4 @@
-<%@ include file="../includes/Navbar.jsp" %>
+<%@ include file="../includes/Header.jsp" %>
 <%@ include file="../includes/Navbar.jsp" %>
 <%
     Users users = (Users) this.getServletContext().getAttribute(ProjectConstants.USERS_DB);

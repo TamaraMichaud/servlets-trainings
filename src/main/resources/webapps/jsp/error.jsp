@@ -1,7 +1,7 @@
 <%@ include file="../includes/Header.jsp" %>
 <%@ include file="../includes/Navbar.jsp" %>
 
-<div class="container-fluid jumbotron">
+<div class="container-fluid jumbotron text-center">
 
       <h1 class="display-4">Woopsie!</h1>
       <p class="lead">You&#39;ve messed this up a bit I think!</p>
