@@ -12,8 +12,8 @@ public class DbMySql {
 
         public DbMySql() {
 
-//            String oracle_jdbc = "mysql:mysql-connector-java.jdbc.Driver";
-            String oracle_jdbc = "com.mysql.cj.jdbc.Driver";
+            String oracle_jdbc = "mysql:mysql-connector-java.jdbc.Driver";
+//            String oracle_jdbc = "com.mysql.cj.jdbc.Driver";
             String username = "root";
             String password = "";
             String db_schema = "db_clientaddressbook";

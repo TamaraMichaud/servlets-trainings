@@ -81,7 +81,7 @@ public class AllFormValues extends HttpServlet {
                 "href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' " +
                 "integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T' " +
                 "crossorigin='anonymous'>\n" +
-                "<link rel=\"stylesheet\" href=\"styles.css\">\n" +
+                "<link rel=\"stylesheet\" href=\"style.css\">\n" +
                 "<link href=\"bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\">" +
                 "</head>\n" +
                 "<body bgcolor = \"#f0f0f0\">\n" +
@@ -98,10 +98,14 @@ public class AllFormValues extends HttpServlet {
         out.println("<h2>" + greeting + "</h2>"); // welcome (back)
 
 //db connection
-        DbMySql mySqlDb = new DbMySql();
-        String dbQueryResult = mySqlDb.countUsers();
-        out.print("<br><p align=\"center\">Db Result = " + dbQueryResult + "</p>\n");
-//out.print("<br><hr><br>");
+//        DbMySql mySqlDb = new DbMySql();
+//        String dbQueryResult = mySqlDb.countUsers();
+//        out.print("<br><p align=\"center\">Db Result = " + dbQueryResult + "</p>\n");
+out.print("<br><h2 class=\"text-danger\">FIX THE DB CONNECTION -> make it universal</h2>\n");
+
+
+
+
         // show the current time
         out.print("<p>The Time Now Is: " + getCurrentTime() + "</p><br>");
 out.print("</div><div class=\"row\"><div class=\"col col-lg-8 offset-2\">");
