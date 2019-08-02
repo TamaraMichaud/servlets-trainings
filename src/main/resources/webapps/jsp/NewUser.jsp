@@ -16,7 +16,7 @@
         <input type="text" class="form-control input-md" id="lastName" name="lastName" required>
     </div>
     <input class="btn btn-primary" type = "submit" value = "Submit" />
-    <a class="btn btn-dark" style="color:white" href="<%= request.getContextPath() %>/users" >Cancel</a>
+    <a class="btn btn-dark" style="color:white" href="Users.jsp" >Cancel</a>
 </form>
 </div>
 

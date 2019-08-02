@@ -6,4 +6,4 @@
 
 </nav>
 
-<div class="container-fluid" id="main-page">%>
+<div class="container-fluid" id="main-page">

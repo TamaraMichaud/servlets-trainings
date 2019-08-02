@@ -91,7 +91,7 @@
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>Wildcard means whole app requires authentication</web-resource-name>
-            <url-pattern>/newuser</url-pattern>
+            <url-pattern>/jsp/NewUser.jsp</url-pattern>
             <http-method>GET</http-method>
             <http-method>POST</http-method>
         </web-resource-collection>
