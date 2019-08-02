@@ -15,8 +15,10 @@ import java.util.List;
 
 public class UsersServlet extends HttpServlet {
 
+
 	public void init() throws ServletException {
 		// Do required initialization
+
 	}
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -40,6 +42,8 @@ public class UsersServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("POST /users");
 
+        String contextPath = request.getContextPath();
+
 		String id = request.getParameter("id");
 
 		if (id != null) {
@@ -53,9 +57,9 @@ public class UsersServlet extends HttpServlet {
 			
 			users.put(user.getId(), user);
 
-			PrintWriter out = response.getWriter();
-			out.print(getUsersHtmlPage());
-		}
+            response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
+            response.setHeader("location", contextPath + "/jsp/Users.jsp");
+        }
 	}
 
 	public void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -73,8 +77,11 @@ public class UsersServlet extends HttpServlet {
 		user.setFirstName(firstName);
 		user.setLastName(lastName);
 
-		PrintWriter out = response.getWriter();
-		out.print(getUsersHtmlPage());
+//		PrintWriter out = response.getWriter();
+//		out.print(getUsersHtmlPage());
+
+		response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
+		response.setHeader("location", request.getContextPath() + "/jsp/Users.jsp");
 	}
 
 	public void doDelete(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -91,8 +98,11 @@ public class UsersServlet extends HttpServlet {
 			users.remove(id);
 		}
 		
-		PrintWriter out = response.getWriter();
-		out.print(getUsersHtmlPage());
+//		PrintWriter out = response.getWriter();
+//		out.print(getUsersHtmlPage());
+
+		response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
+		response.setHeader("location", request.getContextPath() + "/jsp/Users.jsp");
 	}
 
 	private String getUsersHtmlPage() {
