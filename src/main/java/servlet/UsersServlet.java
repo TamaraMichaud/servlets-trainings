@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,8 +33,8 @@ public class UsersServlet extends HttpServlet {
 			// Set response content type
 			response.setContentType("text/html");
 	
-			PrintWriter out = response.getWriter();
-			out.print(getUsersHtmlPage());
+			response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
+			response.setHeader("location", contextPath + "/jsp/Users.jsp");
 		}
 	}
 
@@ -77,9 +76,6 @@ public class UsersServlet extends HttpServlet {
 		user.setFirstName(firstName);
 		user.setLastName(lastName);
 
-//		PrintWriter out = response.getWriter();
-//		out.print(getUsersHtmlPage());
-
 		response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
 		response.setHeader("location", request.getContextPath() + "/jsp/Users.jsp");
 	}
@@ -97,9 +93,6 @@ public class UsersServlet extends HttpServlet {
 		if (user != null) {
 			users.remove(id);
 		}
-		
-//		PrintWriter out = response.getWriter();
-//		out.print(getUsersHtmlPage());
 
 		response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
 		response.setHeader("location", request.getContextPath() + "/jsp/Users.jsp");
