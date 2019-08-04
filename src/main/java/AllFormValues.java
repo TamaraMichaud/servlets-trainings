@@ -98,10 +98,10 @@ public class AllFormValues extends HttpServlet {
         out.println("<h2>" + greeting + "</h2>"); // welcome (back)
 
 //db connection
-//        DbMySql mySqlDb = new DbMySql();
-//        String dbQueryResult = mySqlDb.countUsers();
-//        out.print("<br><p align=\"center\">Db Result = " + dbQueryResult + "</p>\n");
-out.print("<br><h2 class=\"text-danger\">FIX THE DB CONNECTION -> make it universal</h2>\n");
+        DbMySql mySqlDb = new DbMySql();
+        String dbQueryResult = mySqlDb.countUsers();
+        out.print("<br><p align=\"center\">Db Result = " + dbQueryResult + "</p>\n");
+//out.print("<br><h2 class=\"text-danger\">FIX THE DB CONNECTION -> make it universal</h2>\n");
 
 
 
@@ -208,10 +208,12 @@ out.print("</div><div class=\"row\"><div class=\"col col-lg-8 offset-2\">");
         int minute = calendar.get(Calendar.MINUTE);
         int second = calendar.get(Calendar.SECOND);
 
-        if (calendar.get(Calendar.AM_PM) == 0)
+        if (calendar.get(Calendar.AM_PM) == 0) {
             am_pm = "AM";
-        else
+        }
+        else {
             am_pm = "PM";
+            }
 
         return ((hour < 10) ? "0" : "") + hour + ":" +
                 ((minute < 10) ? "0" : "") + minute + ":" +
