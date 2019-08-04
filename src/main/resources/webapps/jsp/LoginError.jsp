@@ -8,7 +8,7 @@
       <hr class="my-4">
       <p>Shall we try again...</p>
       <p class="lead">
-        <a class="btn btn-danger btn-lg" href="jsp/Users.jsp" role="button">Start Over</a>
+        <a class="btn btn-danger btn-lg" href="Users.jsp" role="button">Start Over</a>
       </p>
 </div>
 

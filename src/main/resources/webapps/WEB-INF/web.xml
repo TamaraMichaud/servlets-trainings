@@ -53,10 +53,10 @@
         <servlet-name>UsersServlet</servlet-name>
         <servlet-class>servlet.UsersServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>ShowNewUserServlet</servlet-name>
-        <servlet-class>servlet.ShowNewUserServlet</servlet-class>
-    </servlet>
+<!--    <servlet>-->
+<!--        <servlet-name>ShowNewUserServlet</servlet-name>-->
+<!--        <servlet-class>servlet.ShowNewUserServlet</servlet-class>-->
+<!--    </servlet>-->
     <servlet>
         <servlet-name>ShowUpdateUserServlet</servlet-name>
         <servlet-class>servlet.ShowUpdateUserServlet</servlet-class>
@@ -74,10 +74,10 @@
         <servlet-name>UsersServlet</servlet-name>
         <url-pattern>/users</url-pattern>
     </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ShowNewUserServlet</servlet-name>
-        <url-pattern>/newuser</url-pattern>
-    </servlet-mapping>
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>ShowNewUserServlet</servlet-name>-->
+<!--        <url-pattern>/newuser</url-pattern>-->
+<!--    </servlet-mapping>-->
     <servlet-mapping>
         <servlet-name>ShowUpdateUserServlet</servlet-name>
         <url-pattern>/updateuser</url-pattern>

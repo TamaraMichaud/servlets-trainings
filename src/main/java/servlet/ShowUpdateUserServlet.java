@@ -20,7 +20,8 @@ public class ShowUpdateUserServlet extends HttpServlet {
 
 		String contextPath = request.getContextPath();
 		request.setAttribute("userId", request.getParameter("id"));
-		request.getRequestDispatcher(contextPath + "/jsp/UpdateUser.jsp").forward(request, response);
+		request.getRequestDispatcher(contextPath + "/../jsp/UpdateUser.jsp").forward(request, response);
+		//TODO: ^^ understand what is happening here!
 	}
 
 	public void destroy() {
