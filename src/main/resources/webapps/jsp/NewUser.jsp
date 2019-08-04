@@ -2,9 +2,9 @@
 <%@ include file="../includes/Header.jsp" %>
 <%@ include file="../includes/Navbar.jsp" %>
 <%
- System.out.println("launching NewUser.jsp");
+ System.out.println("navigated to: NewUser.jsp");
 %>
-<div class="container-fluid">
+
 <form action="<%= request.getContextPath() %>/users" method="POST">
     <h1 class="h3 mb-3 font-weight-normal text-center">Enter New User Details</h1>
     <div class="form-group">
@@ -18,7 +18,6 @@
     <input class="btn btn-primary" type = "submit" value = "Submit" />
     <a class="btn btn-dark" style="color:white" href="Users.jsp" >Cancel</a>
 </form>
-</div>
 
 <%@ include file="../includes/FooterBar.jsp" %>
 <%@ include file="../includes/Footer.jsp" %>
