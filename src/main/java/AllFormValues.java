@@ -98,12 +98,10 @@ public class AllFormValues extends HttpServlet {
         out.println("<h2>" + greeting + "</h2>"); // welcome (back)
 
 //db connection
-//        DbMySql mySqlDb = new DbMySql();
-//        String dbQueryResult = mySqlDb.countUsers();
-//        out.print("<br><p align=\"center\">Db Result = " + dbQueryResult + "</p>\n");
-out.print("<br><h2 class=\"text-danger\">FIX THE DB CONNECTION -> make it universal</h2>\n");
-
-
+        DbMySql mySqlDb = new DbMySql();
+        String dbQueryResult = mySqlDb.countUsers();
+        out.print("<br><p align=\"center\">Db Result = " + dbQueryResult + "</p>\n");
+//out.print("<br><h2 class=\"text-danger\">FIX THE DB CONNECTION -> make it universal</h2>\n");
 
 
         // show the current time
