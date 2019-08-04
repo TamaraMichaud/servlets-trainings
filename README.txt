@@ -1,6 +1,3 @@
-// Keystore password:: s3Cur1T_e // CN=TMich, OU=Personal, O=Personal, L=Personal, ST=Personal, C=UK
-^^ pointless if we're moving this project around... the cert would need to be with me :/
-
 
 Servlet calls:
 
