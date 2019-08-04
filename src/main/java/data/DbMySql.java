@@ -12,13 +12,11 @@ public class DbMySql {
 
         public DbMySql() {
 
-            String oracle_jdbc = "mysql:mysql-connector-java.jdbc.Driver";
-//            String oracle_jdbc = "com.mysql.cj.jdbc.Driver";
+            String oracle_jdbc = "com.mysql.cj.jdbc.Driver";
             String username = "root";
             String password = "";
             String db_schema = "db_clientaddressbook";
 
-//            String url = "jdbc:mysql://localhost:3306/firsttestschema";
             String url = "jdbc:mysql://localhost:3306/" + db_schema + "?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 
             try {

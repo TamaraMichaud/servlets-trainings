@@ -104,6 +104,7 @@ public class AllFormValues extends HttpServlet {
 //out.print("<br><h2 class=\"text-danger\">FIX THE DB CONNECTION -> make it universal</h2>\n");
 
 
+
         // show the current time
         out.print("<p>The Time Now Is: " + getCurrentTime() + "</p><br>");
 out.print("</div><div class=\"row\"><div class=\"col col-lg-8 offset-2\">");
@@ -206,10 +207,12 @@ out.print("</div><div class=\"row\"><div class=\"col col-lg-8 offset-2\">");
         int minute = calendar.get(Calendar.MINUTE);
         int second = calendar.get(Calendar.SECOND);
 
-        if (calendar.get(Calendar.AM_PM) == 0)
+        if (calendar.get(Calendar.AM_PM) == 0) {
             am_pm = "AM";
-        else
+        }
+        else {
             am_pm = "PM";
+            }
 
         return ((hour < 10) ? "0" : "") + hour + ":" +
                 ((minute < 10) ? "0" : "") + minute + ":" +
