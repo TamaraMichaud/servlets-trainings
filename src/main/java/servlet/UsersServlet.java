@@ -98,40 +98,6 @@ public class UsersServlet extends HttpServlet {
 		response.setHeader("location", request.getContextPath() + "/jsp/Users.jsp");
 	}
 
-	private String getUsersHtmlPage() {
-		HtmlPage htmlPage = new HtmlPage("List of Users");
-		HtmlTable htmlTable = new HtmlTable();
-
-		Users users = (Users) this.getServletContext().getAttribute(ProjectConstants.USERS_DB);
-
-		System.out.println("there are " + users.size() + " users");
-
-		for (User user : users.values()) {
-			HtmlTableRow row = new HtmlTableRow();
-			HtmlTableCell id = new HtmlTableCell(user.getId().substring(0,13));
-			HtmlTableCell firstName = new HtmlTableCell(user.getFirstName(), "updateuser?id=" + user.getId());
-			HtmlTableCell lastName = new HtmlTableCell(user.getLastName());
-			HtmlTableCell deleteLink = new HtmlTableCell("delete", "users?action=delete&id=" + user.getId() );
-
-			List<HtmlTableCell> cells = new ArrayList<>();
-			cells.add(id);
-			cells.add(firstName);
-			cells.add(lastName);
-			cells.add(deleteLink);
-
-			row.addCells(cells);
-			htmlTable.addRow(row);
-		}
-
-		htmlPage.addTable(htmlTable);
-
-		HtmlElement htmlElement = new HtmlElement("<a class=\"btn btn-primary\" href=\"newuser\"> Add New User </a>");
-		htmlPage.addElement(htmlElement);
-
-		return htmlPage.toString();
-	}
-	
-	
 	public void destroy() {
 		// do nothing.
 	}
