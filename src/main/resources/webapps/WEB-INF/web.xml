@@ -87,7 +87,16 @@
         <url-pattern>/pageinfo</url-pattern>
     </servlet-mapping>
 
-<!--    http://avajava.com/tutorials/lessons/how-do-i-use-basic-authentication-with-tomcat.html-->
+    <resource-ref>
+        <description>DB Connection</description>
+        <res-ref-name>jdbc/UsersTable</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
+
+
+
+    <!--    http://avajava.com/tutorials/lessons/how-do-i-use-basic-authentication-with-tomcat.html-->
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>Wildcard means whole app requires authentication</web-resource-name>
@@ -96,7 +105,8 @@
             <http-method>POST</http-method>
         </web-resource-collection>
         <auth-constraint>
-            <role-name>tomcat</role-name>
+            <role-name>Finance</role-name>
+            <role-name>Admin</role-name>
 <!--            ^^ see file ..../tomcat/conf/tomcat-users.xml-->
         </auth-constraint>
 
@@ -115,9 +125,11 @@
             <http-method>POST</http-method>
         </web-resource-collection>
         <auth-constraint>
-            <role-name>tomcat</role-name>
+            <role-name>Read-Only</role-name>
+            <role-name>Finance</role-name>
             <!--            ^^ see file ..../tomcat/conf/tomcat-users.xml-->
         </auth-constraint>
+<!--        WARNING: Security role name [tomcat] used in an <auth-constraint> without being defined in a <security-role>-->
 
         <user-data-constraint>
             <!-- transport-guarantee can be CONFIDENTIAL, INTEGRAL, or NONE -->
@@ -137,6 +149,14 @@
         </form-login-config>
     </login-config>
 
+<!--    <error-page>-->
+<!--        <location>/general-error.html</location>-->
+<!--    </error-page>-->
+<!--    ^^ this should work for any error-code... (untested)-->
 
+    <error-page>
+        <error-code>403</error-code>
+        <location>/jsp/PermissionsError.jsp</location>
+    </error-page>
 
 </web-app>
