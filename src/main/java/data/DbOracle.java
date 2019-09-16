@@ -18,7 +18,6 @@ public class DbOracle {
 
         String url = "jdbc:oracle:thin:@ora-test.emv2.com:1521/PODTEST";
 
-
         try {
             //step1 load the driver class
             Class.forName(oracle_jdbc);

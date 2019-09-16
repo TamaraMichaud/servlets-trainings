@@ -44,11 +44,6 @@ public class StartupServlet extends HttpServlet {
 			throw new RuntimeException("Database Query Error!", e);
 		}
 
-
-		//TEST ONLY - can we access my library.... NOP£ :'(
-//		PasswordUtils fml = new PasswordUtils
-
-
 	}
 
 }
