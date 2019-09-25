@@ -5,7 +5,7 @@
                              http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-    <display-name>Tamaras Servlet Training Project</display-name>
+    <display-name>Tamara's Servlet Training Project</display-name>
 
 <!--    WELCOME PAGES-->
     <welcome-file-list>
